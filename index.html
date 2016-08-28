@@ -30,13 +30,15 @@
     </div>
     <div id="container">
       <h2>Employee Info</h2>
+      <p id = "companyTotal">Monthly Salary Total:><span id = "totalSalary">{{totalSalary | currency}}</span></p>
       <table ng-repeat"employee in employees" style="width:100%">
         <tr>
-          <th ng-bind = "employee.firstname">{{ employeefirstname }}</th>
-          <th ng-bind = "employee.lastname">{{ employeelastname }}</th>
-          <th ng-bind = "employee.ID">{{ employeeid }}</th>
-          <th ng-bind= "employee.title">{{ employeetitle  }}</th>
-          <th ng-bind = "employee.salary">{{ employeesalary }}</th>
+          <th>{{ employeefirstname }}</th>
+          <th>{{ employeelastname }}</th>
+          <th>{{ employeeid }}</th>
+          <th>{{ employeetitle  }}</th>
+          <th>{{ employeesalary }}</th>
+          <button ng-click="deleteEmployee(index)">Delete</button>
 
         </tr>
       </table>

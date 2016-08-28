@@ -1,36 +1,48 @@
 var myApp = angular.module("myApp", []);
 
 $scope.employees = [];
+$scope.newEmployee = {};
 $scope.totalSalary = 0;
-$scope.monthlySalary = 0;
+
 
 myApp.controller("MyController", ["$scope", function ($scope){
      console.log("mycontroller is working");
 
 $scope.addEmp = function () {
+   $scope.employees.salary=parseInt($scope.employees.salary);
 
-    $scope.employees.push({
-      firstname: $scope.employeefirstname,
-      lastname: $scope.employeelastname,
-      ID: $scope.employeeid,
-      title: $scope.employeetitle,
-      salary: $scope.employeesalary,
-      employee = new Employee(firstname, lastname, id, title, salary);
-      employees.push(employee);
-      $scope.employees=employees;
-       console.log('employees in', employees);
-      getSalaries(salary);
-    });
+   $scope.totalSalary += Math.round(scope.employees.salary/12);
+   $scope.newEmployee.push($scope.employees);
 
-}
+   $scope.employees{};
+ }
 
-   function getSalaries(salary){
-     var check = parseFloat(salary);
-     totalSalary += check;
-     monthlySalary = totalSalary/12;
-     $scope.totalSalary=totalSalary;
-     $scope.monthlySalary=monthlySalary;
-   }
+ $scope.removeEmployee = function(index){
+   $scope.totalSalary -= Math.round(employee.salary/12);
+   $scope.employees.splice(index, 1);
+ }
+    // $scope.employees.push({
+    //   firstname: $scope.employeefirstname,
+    //   lastname: $scope.employeelastname,
+    //   ID: $scope.employeeid,
+    //   title: $scope.employeetitle,
+    //   salary: $scope.employeesalary,
+    //   employee = new Employee(firstname, lastname, id, title, salary);
+    //   employees.push(employee);
+    //   $scope.employees=employees;
+    //    console.log('employees in', employees);
+    //   getSalaries(salary);
+    // });
+
+// }
+//
+//    function getSalaries(salary){
+//      var check = parseFloat(salary);
+//      totalSalary += check;
+//      monthlySalary = totalSalary/12;
+//      $scope.totalSalary=totalSalary;
+//      $scope.monthlySalary=monthlySalary;
+//    }
 
   }]);
 
